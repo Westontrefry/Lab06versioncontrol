@@ -1,3 +1,5 @@
+# Weston
+
 # Encoder
 # Take an 8-digit password in string format containing only integers
 # Stores password into a new variable
@@ -20,7 +22,6 @@ def option_prompt():
     opt = int(input("Please enter an option: "))
     return opt
 
-
 def encode_password(pass_word):
     enc_pass = ''
     for digit in pass_word:
@@ -37,24 +38,6 @@ def encode_password(pass_word):
             idx = 2
             enc_pass += str(idx)
     return enc_pass
-
-
-def decode_password(pass_word):
-    dec_pass = ''
-    for digit in pass_word:
-        if int(digit) >= 3:
-            idx = int(digit) - 3
-            dec_pass += str(idx)
-        elif int(digit) == 2:
-            idx = 9
-            dec_pass += str(idx)
-        elif int(digit) == 1:
-            idx = 8
-            dec_pass += str(idx)
-        elif int(digit) == 0:
-            idx = 7
-            dec_pass += str(idx)
-    return dec_pass
 
 
 if __name__ == "__main__":
