@@ -10,6 +10,12 @@
 # Returns original password
 # Inverse function of encoder
 
+def decode(string):
+	decoded = ''
+	for i in string:
+		decoded+=str((int(i)+7)%10)
+	return decoded
+
 def main_menu():
     print("Menu")
     print("-------------")
@@ -76,7 +82,7 @@ if __name__ == "__main__":
                         print("Your password has been encoded and stored!\n")
 
         elif option == 2:
-            decoded_pass = decode_password(password)
+            decoded_pass = decode(password)
             print(f"The encoded password is {password}, and the original password is {decoded_pass}.\n")
 
         elif option == 3:
